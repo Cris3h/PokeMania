@@ -3,7 +3,8 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemonFromAPI, getTypesFromAPI } from '../../redux/actions/'
-
+import '../../styles/pokemon.css'
+import PokemonCard from "./PokemonCard";
 // import dataFetch from '../../redux/actions'
 
 
@@ -18,15 +19,19 @@ function PokemonHome () {
     }, [])
 
 
-    // console.log(types)
+
     return(
-        <div>
+        <div className="body-home">
             {
                 pokemon ? pokemon.map((poke) => (
                     <div key={poke.id}>
-                    <p>{poke.name}</p>
-                    <img src={poke.img}></img>
-                    <Link href={`pokemon/${poke.id}`}> stats </Link>
+                        <PokemonCard 
+                        name={poke.name}
+                        img={poke.img}
+                        attack={poke.attack}
+                        type={poke.type}
+                        link={poke.id}
+                        />
                     </div>
                 )) : 'jeje'
             }
@@ -35,3 +40,12 @@ function PokemonHome () {
 }
 
 export default PokemonHome
+
+{/*
+
+type={poke.type.map(p => p.type ? p.type.map(t=> t) : null)}
+
+<p>{poke.name}</p>
+<img src={poke.img}></img>
+
+*/}
