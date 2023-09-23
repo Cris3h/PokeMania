@@ -9,17 +9,19 @@ import Typography from "@mui/joy/Typography";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 
 import Link from "next/link";
+import Image from "next/image";
+
+import "../../styles/poke.css";
 
 export default function PokemonCard({ name, img, attack, type, link }) {
-  console.log(type);
-
   return (
-    <Box sx={{ minHeight: 350 }}>
+    <>
+      {/*  <Box sx={{ minHeight: 350 }}>
       <Card
         variant="outlined"
         sx={(theme) => ({
           width: 300,
-          height: 500,
+          height: 450,
           gridColumn: "span 2",
           flexDirection: "row",
           flexWrap: "wrap",
@@ -34,67 +36,103 @@ export default function PokemonCard({ name, img, attack, type, link }) {
           "& > *": { minWidth: "clamp(0px, (360px - 100%) * 999,100%)" },
         })}
       >
-        <AspectRatio
-          variant="soft"
-          sx={{
-            flexGrow: 1,
-            display: "contents",
-            "--AspectRatio-paddingBottom":
-              "clamp(0px, (100% - 360px) * 999, min(calc(100% / (16 / 9)), 300px))",
-          }}
-        >
-          {/* <img
-            src="https://images.unsplash.com/photo-1492305175278-3b3afaa2f31f?auto=format&fit=crop&w=2000" //{poke.img}
-            // src={img}
-            loading="lazy"
-            alt=""
-          /> */}
-        </AspectRatio>
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             gap: 2,
-            maxWidth: 200,
           }}
         >
-          <Box sx={{ display: "flex" }}>
-            <div>
-             <Typography level="title-lg">{name}</Typography>
-              {/*  <Typography level="body-sm">{type}</Typography> */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div style={{ display: "grid" }}>
+              <Typography level="title-lg" sx={{}}>
+                {name}
+              </Typography>
             </div>
             <IconButton
               size="sm"
               variant="plain"
-              color="neutral"
+              color="danger"
               sx={{ ml: "auto", alignSelf: "flex-start" }}
             >
               <FavoriteBorderRoundedIcon color="danger" />
             </IconButton>
           </Box>
-          <AspectRatio
-            variant="soft"
+
+          <Box
             sx={{
-              "--AspectRatio-paddingBottom":
-                "clamp(0px, (100% - 200px) * 999, 200px)",
-              pointerEvents: "none",
+              display: "flex",
+              alignContent: "center",
+              justifyContent: "center",
+              width: 300,
+              height: 250,
             }}
           >
-            <img alt="" src={img} />
-          </AspectRatio>
-          <Box sx={{ display: "flex", gap: 1.5, mt: "auto" }}>
-            <Avatar variant="soft" color="neutral">
-              Y
-            </Avatar>
+            <Image
+              alt={`${name} image`}
+              src={img}
+              width={300}
+              height={250}
+              objectFit="cover"
+            ></Image>
+          </Box>
+          <Box sx={{ display: "flex", gap: 2, mt: "auto", padding: 0.5 }}>
+            <Typography color="neutral">
+              {type.length > 1 ? "Types:" : "Type"}
+            </Typography>
             <div>
               {type?.map((t) => (
-                <Typography level="body-sm">{t}</Typography>
+                <Typography level="body-md">- {t}</Typography>
               ))}
             </div>
+            <Typography sx={{}}>{`attack power: ${attack}`}</Typography>
           </Box>
         </Box>
-        <Link href={`/pokemon/${link}`}> stats </Link>
+        <Typography sx={{ textAlign: "center" }}>
+          <Link href={`/pokemon/${link}`}> stats </Link>
+        </Typography>
       </Card>
-    </Box>
+    </Box> */}
+
+      <div className="card">
+        <div className="card-container">
+          <div className="card-header-container">
+            <small className="card-status">status</small>
+            <p className="card-name">{name}</p>
+            <small className="'card-hp">hp: 60</small>
+          </div>
+
+          <div className="card-image-container">
+            <div className="card-image-container-border">
+              <img src={img} alt="Imagen" className="card-img" />
+
+            </div>
+            <div className="card-image-description-container">
+              <div className="card-image-description-border">
+                <small className="card-image-description">a strong pokemon</small>
+              </div>
+            </div>
+          </div>
+
+          <div className="card-description">
+            types:{" "}
+            {type?.map((t) => (
+              <p>- {t}</p>
+            ))}
+            <p>attack {attack}</p>
+          </div>
+
+          <div className="card-link-container">
+            <a href="#">Enlace</a>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
