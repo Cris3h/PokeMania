@@ -4,7 +4,7 @@ import Image from "next/image";
 
 
 import CatchingPokemonRoundedIcon from '@mui/icons-material/CatchingPokemonRounded';
-import "../../styles/poke.css";
+import "../../styles/PokemonCard.css";
 
 export default function PokemonCard({ name, img, attack, type, link }) {
   const typeClassMap = {
@@ -76,7 +76,7 @@ export default function PokemonCard({ name, img, attack, type, link }) {
             </div>
             <div className="card-link-container">
               {/* el detail que sea una pokedex */}
-              <Link href={`/pokemon/${link}`}> PokeDex </Link>
+              <Link href={`/pokemon/${link}`} className="link-button"> PokeDex </Link>
             </div>
           </div>
         </div>
