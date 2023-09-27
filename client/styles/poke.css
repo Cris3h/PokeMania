@@ -1,3 +1,28 @@
+/*  --------------------------------------- GENERAL ------------------------------------------- */
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* .card h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.card a {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+} */
+/* ----------------------------------------- CONTAINER --------------------------------------- */
+
 .card {
   width: 380px;
   height: 500px;
@@ -6,26 +31,77 @@
   text-align: center;
   margin: 20px;
   padding: 15px;
-  background-color: rgb(253, 253, 97);
   border-radius: 5%;
 }
+
+/* ------------------------------------------ CARD ------------------------------------------- */
 
 .card-container {
   border: 0.5px solid rgb(158, 157, 157);
   border-radius: 2%;
   width: 100%;
   height: 100%;
-  background: rgb(255, 248, 0);
+}
+
+/* -------------------------------- CARD HEADER ---------------------------------------------- */
+
+.card-header-container {
+  display: grid;
+  grid-template-columns: 15% 60% 25%;
+}
+
+.header-tag-container {
+  display: flex;
+  height: 15px;
+  width: 50px;
+  border: 0.5px solid white;
+  justify-content: center;
+  align-self: center;
+  border-radius: 30%;
+  background: rgb(184, 176, 176);
   background: linear-gradient(
-    332deg,
-    rgba(255, 248, 0, 1) 0%,
-    rgba(163, 165, 31, 1) 20%,
-    rgba(255, 248, 0, 1) 43%,
-    rgba(199, 196, 59, 1) 57%,
-    rgba(255, 252, 31, 1) 78%,
-    rgba(153, 153, 5, 0.9612219887955182) 95%
+    336deg,
+    rgba(184, 176, 176, 1) 0%,
+    rgba(255, 255, 255, 1) 64%,
+    rgba(203, 196, 196, 1) 85%,
+    rgba(133, 132, 132, 1) 105%
   );
 }
+.header-tag-container small {
+  font-size: 9px;
+}
+
+.card-name {
+  text-align: start;
+  align-self: center;
+  text-transform: capitalize;
+}
+.card-header-hp {
+  grid-column: 3/4;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2px 6px 3px 0;
+}
+
+.card-header-hp b {
+  font-size: 9px;
+  align-self: end;
+  text-align: center;
+  margin: 0 1px 4px 0;
+}
+
+.card-header-hp p {
+  align-self: end;
+}
+
+.header-icon {
+  border: 0.5px solid #565656;
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 6px;
+}
+
+/* -------------------------------- CARD IMAGE ----------------------------------------------- */
 
 .card-image-container {
   border: 1px solid black;
@@ -47,10 +123,19 @@
   border-end-end-radius: 2%;
 }
 
+.card-img {
+  width: auto;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+/* ------------------------------------ CARD IMAGE DESCRIPTION ------------------------------------- */
+
 .card-image-description-container {
   border-top: 0.5px solid rgb(168, 168, 168);
   margin: 1px 0px 1px 0px;
 }
+
 .card-image-description-border {
   background: rgb(236, 234, 234);
   background: linear-gradient(
@@ -64,33 +149,191 @@
   );
   border: 0.3px solid rgb(187, 187, 187);
   margin: 1px 2px 1px 2px;
-  /* border-end-start-radius: 10%;
-    border-end-end-radius: 10%; */
   border-radius: 10%;
 }
 
-.card-img {
-  width: auto;
-  max-height: 200px;
-  object-fit: cover;
+/*  ------------------------------------ CARD DESCRIPTION -------------------------------------- */
+
+.card-description {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  height: 200px;
 }
 
-.card h2 {
-  font-size: 24px;
-  margin: 10px 0;
+.description-type {
+  grid-row: 1/2;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
 }
 
-.card p {
-  font-size: 16px;
+.description-type p {
+  margin: 15px;
 }
 
-.card a {
-  text-decoration: none;
-  background-color: #007bff;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  margin-top: 10px;
-  display: inline-block;
+.description-attack {
+  grid-row: 2/3;
+  display: flex;
+  align-items: center;
+}
+
+.description-attack p {
+  margin: 15px;
+}
+
+.card-link-container {
+  grid-row: 3/4;
+}
+
+/*  ------------------------------------ CARD LINK -------------------------------------------- */
+
+
+.card-link-container{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+/* --------------------------------------- SWITCH -----------------------------------------------*/
+
+.normal-background {
+  /* Estilos para tipo normal */
+}
+
+.fighting-background {
+  /* Estilos para tipo fighting */
+}
+
+.flying-background {
+  /* Estilos para tipo flying */
+}
+
+.poison-background {
+  /* Estilos para tipo poison */
+}
+
+.ground-background {
+  /* Estilos para tipo ground */
+}
+
+.bug-background {
+  /* Estilos para tipo bug */
+}
+
+.rock-background {
+  /* Estilos para tipo rock */
+}
+
+.ghost-background {
+  /* Estilos para tipo ghost */
+}
+
+.steel-background {
+  /* Estilos para tipo steel */
+}
+
+/* Tipos elementales */
+.fire-background {
+  background: rgb(255, 0, 0);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(217, 163, 163, 1) 23%,
+    rgba(240, 45, 45, 1) 60%,
+    rgba(240, 124, 124, 1) 83%,
+    rgba(230, 38, 38, 1) 100%
+  );
+}
+
+
+/* Tipos generales */
+.normal-background {
+  background: linear-gradient(45deg, #b3b3b3, #666666);
+}
+
+.fighting-background {
+  background: linear-gradient(45deg, #ff4d4d, #cc0000); 
+}
+
+.flying-background {
+  background: linear-gradient(45deg, #99ccff, #0055cc);
+}
+
+.poison-background {
+  background: linear-gradient(45deg, #9933cc, #660099); 
+}
+
+.ground-background {
+  background: linear-gradient(45deg, #cc9966, #996633); 
+}
+
+.bug-background {
+  background: linear-gradient(45deg, #99cc33, #669900); 
+}
+
+.rock-background {
+  background: linear-gradient(45deg, #b3b3b3, #666666); 
+}
+
+.ghost-background {
+  background: linear-gradient(45deg, #663366, #330033);
+}
+
+.steel-background {
+  background: linear-gradient(45deg, #999999, #666666); 
+}
+
+/* Tipos elementales */
+.fire-background {
+  background: linear-gradient(45deg, #ff0000, #d9a3a3, #f02d2d, #f07c7c, #e62626);
+}
+
+.water-background {
+  background: linear-gradient(45deg, #3399ff, #0055cc);
+}
+
+.grass-background {
+  background: linear-gradient(45deg, #66cc66, #339933); 
+}
+
+.electric-background {
+  background: rgb(255, 248, 0);
+  background: linear-gradient(
+    332deg,
+    rgba(255, 248, 0, 1) 0%,
+    rgba(163, 165, 31, 1) 20%,
+    rgba(255, 248, 0, 1) 43%,
+    rgba(199, 196, 59, 1) 57%,
+    rgba(255, 252, 31, 1) 78%,
+    rgba(153, 153, 5, 0.9612219887955182) 95%
+  ); 
+}
+
+.psychic-background {
+  background: linear-gradient(45deg, #ff99cc, #ff3399);
+}
+
+.ice-background {
+  background: linear-gradient(45deg, #66ccff, #3399cc); 
+}
+
+.dark-background {
+  background: linear-gradient(45deg, #333333, #000000); 
+}
+
+.dragon-background {
+  background: linear-gradient(45deg, #9966ff, #6633cc); 
+}
+
+.fairy-background {
+  background: linear-gradient(45deg, #ff66ff, #ff3399); 
+}
+
+/* Tipos especiales */
+.unknown-background {
+  background: linear-gradient(45deg, #999999, #666666); 
+}
+
+.shadow-background {
+  background: linear-gradient(45deg, #663300, #331a00); 
 }

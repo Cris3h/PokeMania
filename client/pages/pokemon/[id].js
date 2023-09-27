@@ -20,6 +20,7 @@ function PokeDetails() {
 
   return(
     <div>
+      {/* que el detail sea una pokedex */}
         {pokemonId ? <p>{pokemonId.name}</p> : <p>F en el chat</p>}
     </div>
   )
