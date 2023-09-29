@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPokemonFromAPI, getTypesFromAPI } from '../../redux/actions/'
 import '../../styles/pokemon.css'
 import PokemonCard from "./PokemonCard";
+
+import '../../styles/pokemonHome.css'
 // import dataFetch from '../../redux/actions'
 
 
@@ -21,7 +23,7 @@ function PokemonHome () {
 
 
     return(
-        <div className="body-home">
+        <div className="main-card-container">
             {
                 pokemon ? pokemon.map((poke) => (
                     <div key={poke.id}>

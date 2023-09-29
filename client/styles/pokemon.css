@@ -1,7 +1,47 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
-.body-home {
 
+.main-container{
+}
+
+.body-home {
+  background-image: url('../images/pokemonCardsBG.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  
+}
+
+.home-image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 3.5rem 0 3.5rem 0;
+}
+
+.image-home-bg{
+  grid-column: 1/3;
+  text-align: center;
+  filter: drop-shadow(15px 7px 4px black);
+
+}
+
+.pokemonCards-container{
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows:auto;
+  justify-content: center; */
+  justify-content: center;
+  align-items: center;
+}
+
+.link-create-container{
+  background-color: rgba(0, 0, 0, 0.4);
 }

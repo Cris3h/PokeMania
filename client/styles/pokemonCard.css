@@ -32,6 +32,7 @@
   margin: 20px;
   padding: 15px;
   border-radius: 5%;
+  
 }
 
 /* ------------------------------------------ CARD ------------------------------------------- */
@@ -127,8 +128,8 @@
 }
 
 .card-img {
-  width: auto;
   max-height: 200px;
+  max-width: fit-content;
   object-fit: cover;
 }
 
@@ -194,7 +195,7 @@
 .card-link-container{
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .link-button {
