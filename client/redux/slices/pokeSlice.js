@@ -19,6 +19,10 @@ export const pokemonReducer = createSlice({
     setPokemonTypes: (state, action) => {
       state.types = action.payload;
     },
+    setPokemonByName: (state, action) => {
+      console.log(state.pokemon);
+      state.pokemon = action.payload;
+    }
   },
 });
 
@@ -26,6 +30,7 @@ export const {
   setAllPokemon,
   setPokemonById,
   setPokemonTypes,
-
+  setPokemonByName,
+  
   } = pokemonReducer.actions;
 export default pokemonReducer.reducer;

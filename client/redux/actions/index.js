@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { setAllPokemon, 
     setPokemonById,
-    setPokemonTypes } from '../slices/pokeSlice'; 
+    setPokemonTypes,
+    setPokemonByName } from '../slices/pokeSlice'; 
 
 export const getPokemonFromAPI = () => async (dispatch)=>{
     try {
@@ -24,6 +25,17 @@ export const getPokemonById = (id) => async (dispatch) => {
         console.error(error)
     }
 }
+
+export const getPokemonByName = (name) => async (dispatch) => {
+    try {
+        const dataPromisse = await axios(`http://localhost:3001/pokemon?name=${name}`)
+        const apiData = dataPromisse.data
+        console.log(apiData);
+        dispatch(setPokemonByName(apiData))
+    } catch (error) {
+        console.error(error)
+    }
+};
 
 export const getTypesFromAPI = () => async (dispatch) =>{
     try {

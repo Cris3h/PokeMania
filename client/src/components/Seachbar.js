@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
+import SearchIcon from '@mui/icons-material/Search';
+import { getPokemonByName } from '../../redux/actions/'
 
-
-const SearchBar = () => {
+const Searchbar = () => {
     const [pokemons, setPokemons] = useState('');
     const dispatch = useDispatch();
 
@@ -26,9 +27,9 @@ const SearchBar = () => {
             placeholder='search...'
             value={pokemons} onChange={(e) => handleSearch(e)}
              />
-             <button className='btn-searchbar' type='submit' onClick={(e) => handleSubmit(e)}>search</button>
+             <button className='btn-searchbar' type='submit' onClick={(e) => handleSubmit(e)}><SearchIcon/></button>
         </div>
     )
 };
 
-export default SearchBar;
+export default Searchbar;
