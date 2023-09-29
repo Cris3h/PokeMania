@@ -1,26 +1,19 @@
 "use client"
 import React, { useEffect } from "react";
-import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemonFromAPI, getTypesFromAPI } from '../../redux/actions/'
-import '../../styles/pokemon.css'
 import PokemonCard from "./PokemonCard";
-
 import '../../styles/pokemonHome.css'
-// import dataFetch from '../../redux/actions'
-
 
 function PokemonHome () {
     const { pokemon } = useSelector(state=> state.pokemonReducer);
-    const { types } = useSelector(state => state.pokemonReducer);
+    // const { types } = useSelector(state => state.pokemonReducer);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getPokemonFromAPI())
         dispatch(getTypesFromAPI())
     }, [])
-
-
 
     return(
         <div className="main-card-container">
