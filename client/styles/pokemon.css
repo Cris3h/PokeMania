@@ -3,9 +3,6 @@
   margin: 0;
 }
 
-.main-container{
-}
-
 .body-home {
   background-image: url('../images/pokemonCardsBG.jpg');
   background-repeat: no-repeat;
@@ -34,14 +31,14 @@
 }
 
 .pokemonCards-container{
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows:auto;
-  justify-content: center; */
   justify-content: center;
   align-items: center;
 }
 
 .link-create-container{
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.navbar-container{
   background-color: rgba(0, 0, 0, 0.4);
 }

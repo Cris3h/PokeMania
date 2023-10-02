@@ -2,14 +2,18 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import PokemonHome from "../src/components/PokemonHome";
+import PokemonHome from "../src/components/cards/PokemonHome";
 
 import pokemonMania from "../images/pokemonMania.png";
 import "../styles/pokemon.css";
+import Navbar from "@/components/bars/Navbar";
 
 function pokemon() {
   return (
       <div className="body-home">
+          <div className="navbar-container">
+            <Navbar />
+          </div>
         <div className="home-image-container">
           <Image
             src={pokemonMania}

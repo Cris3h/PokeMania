@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import PokemonCreate from '../src/components/PokemonCreate'
+import PokemonCreate from '../src/components/create/PokemonCreate'
 
 
 function create(){
