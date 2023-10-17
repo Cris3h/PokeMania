@@ -48,17 +48,14 @@ export const getTypesFromAPI = () => async (dispatch) =>{
 
 
 export const sortPokemonByPower = (payload) => (dispatch) => {
-    console.log('2° - estamos en la action', payload)
     return dispatch(setPokemonSort(payload))
 }
 
 export const sortPokemonByName = (payload) => (dispatch) => {
-    console.log('2° - estamos en la action', payload)
     return dispatch(setPokemonByName(payload))
 }
 
 export const filterPokemonByType = (payload) => (dispatch) => {
-    console.log('2° - estamos en la action', payload)
     return dispatch(setPokemonByType(payload))
 }
 

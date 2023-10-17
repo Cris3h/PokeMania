@@ -13,15 +13,9 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 
-
-
 import Searchbar from "./Seachbar";
 import Sorts from "../sorts/Sorts";
-import Filters from '../filters/Filters'
-import { useDispatch } from "react-redux";
-
-
-
+import Filters from '../filters/Filters';
 
 
 const drawerWidth = 240;
@@ -37,8 +31,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 export default function Navbar() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  
-  const dispatch = useDispatch();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -47,14 +39,6 @@ export default function Navbar() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  
-//-----------------------------------------------
-  // useEffect(()=>{
-  //   dispatch(getPokemonFromAPI())
-  //   dispatch(getTypesFromAPI())
-  // },[])
-
-//-------------------------------------------  
 
   return (
     <Box sx={{ display: "flex" }} className='nav-container'>
@@ -99,7 +83,7 @@ export default function Navbar() {
 
 
         <Divider />
-        <List>
+        <List onClick={handleDrawerClose}>
           <ListItem disablePadding>
             <Sorts />
           </ListItem>
@@ -108,19 +92,25 @@ export default function Navbar() {
           </ListItem>
         </List>
 
-        {/* <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List> */}
       </Drawer>
     </Box>
   );
 }
+
+{/* 
+
+<List>
+  {['All mail', 'Trash', 'Spam'].map((text, index) => (
+    <ListItem key={text} disablePadding>
+      <ListItemButton>
+        <ListItemIcon>
+          {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+        </ListItemIcon>
+        <ListItemText primary={text} />
+      </ListItemButton>
+    </ListItem>
+  ))}
+</List> 
+
+*/}
+

@@ -11,10 +11,11 @@ import Navbar from "@/components/bars/Navbar";
 function pokemon() {
   return (
       <div className="body-home">
-          <div className="navbar-container">
+          {/* <div className="navbar-container">
             <Navbar />
-          </div>
+          </div> */}
         <div className="home-image-container">
+          <Navbar />
           <Image
             src={pokemonMania}
             alt="pokemon-font"
